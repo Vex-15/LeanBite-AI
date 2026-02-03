@@ -1,70 +1,118 @@
-# LeanBite AI
+# 🍽️ LeanBite AI  
+### Realistic Meal Planning Under Constraints  
+**Abhyudaya Hackathon Submission**
 
-AI-powered meal planning for food scarcity and budget constraints. The system works only with what you actually have and reasons honestly about nutrition trade-offs.
+---
 
-## Tech Stack
+## 🔍 Problem Statement
 
-- **Next.js** (App Router)
-- **Tailwind CSS**
-- **Node.js** backend via Next.js API routes
-- **Gemini API** (`@google/generative-ai`)
-- No database
+Most meal-planning applications assume **ideal conditions** — full pantries, flexible budgets, and complete nutrition.  
+In reality, many people plan meals with:
 
-## Setup
+- Limited food options  
+- Tight budgets  
+- Incomplete or unbalanced nutrition  
 
-1. **Install dependencies**
+**LeanBite AI** is built for these real-world constraints.
 
-   ```bash
-   npm install
-   ```
+---
 
-2. **Environment**
+## 💡 Solution
 
-   Copy `.env.example` to `.env.local` and set your Gemini API key:
+LeanBite AI is an AI-powered meal planner that works strictly with **what the user actually has**.
 
-   ```bash
-   cp .env.example .env.local
-   ```
+Instead of optimizing for perfection, it focuses on:
+- Practical feasibility  
+- Honest trade-offs  
+- Transparent reasoning  
 
-   In `.env.local`:
+No calorie chasing. No fake scores. No ideal assumptions.
 
-   ```
-   GEMINI_API_KEY=your_gemini_api_key_here
-   ```
+---
 
-   **Important:** The API key is only used on the server. Never expose it to the frontend.
+## ⚙️ Features
 
-3. **Run**
+- Accepts:
+  - Available food items
+  - Budget
+  - Meals per day
+  - Diet type
+  - Goal
+- Generates meal plans using **only listed foods**
+- Clearly explains:
+  - Nutritional strengths
+  - Nutritional weaknesses
+  - Trade-offs made under constraints
+- Suggests **low-cost substitutions only when critical**
 
-   ```bash
-   npm run dev
-   ```
+---
 
-   Open [http://localhost:3000](http://localhost:3000).
+## 🧠 Why AI Is Used
 
-## Project Structure
+This problem requires **reasoning under constraints**, not rule-based matching.
 
-- `src/app/` — App Router pages (landing, plan)
-- `src/app/api/meal-plan/` — POST API route for meal planning (Gemini)
-- `src/components/` — Nav, MealPlanForm, MealPlanResults
-- `src/types/` — Meal plan response types
+AI helps to:
+- Handle incomplete food lists
+- Balance nutrition with budget limitations
+- Make realistic compromises
+- Explain decisions transparently
 
-## API
+AI is used for **reasoning and explanation**, not blind automation.
 
-- **POST `/api/meal-plan`**
+---
 
-  Body (JSON):
+## 🧱 Tech Stack
 
-  - `availableFoods` (string) — What the user has
-  - `budget` (number) — Budget in ₹
-  - `mealsPerDay` (1–3)
-  - `dietType` — `"veg"` or `"non-veg"`
-  - `goal` — `"survival"` | `"balanced"` | `"energy"`
+- **Frontend:** Next.js, TypeScript, Tailwind CSS  
+- **Backend:** Next.js API Routes  
+- **AI Layer:** Gemini (mocked where API access is restricted)  
+- **Design:** Minimal, calm, accessibility-first UI  
 
-  Returns the meal plan JSON (meal_plan, nutrition_analysis, tradeoffs, cheap_substitutions).
+---
 
-## Scope
+## 🎯 Design Philosophy
 
-- No calorie counters or nutrition perfection scores
-- No database or auth
-- Single internal-tool style flow: land → plan → results
+- Honesty over perfection  
+- Constraints over optimization  
+- Explainability over black-box answers  
+- Working MVP over feature overload  
+
+---
+
+## ⚠️ Limitations
+
+- Nutrition analysis is qualitative, not medical advice  
+- Output quality depends on input clarity  
+- AI API availability may vary  
+
+These limitations are **explicitly acknowledged**.
+
+---
+
+## 🚀 Future Scope
+
+- Consistent structured meal schema
+- Local fallback reasoning engine
+- Region-aware food cost estimation
+- Offline / low-connectivity support
+
+---
+
+## 🔐 Security
+
+- API keys stored in environment variables
+- `.env.local` excluded via `.gitignore`
+- No user data stored or logged
+
+---
+
+## 🏁 Hackathon Note
+
+LeanBite AI was built as a **focused MVP during the Abhyudaya Hackathon**, prioritizing:
+
+- Clear problem understanding  
+- Sensible scope decisions  
+- Transparent reasoning  
+- A working, demo-ready product  
+
+---
