@@ -156,7 +156,7 @@ export async function POST(request: NextRequest) {
     const data = await geminiResponse.json();
 
     if (!geminiResponse.ok) {
-      console.error("🔥 GEMINI RAW ERROR 🔥", data);
+      console.error(" GEMINI RAW ERROR ", data);
       return NextResponse.json(
         {
           error: data?.error?.message || JSON.stringify(data),

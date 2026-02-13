@@ -40,7 +40,9 @@ const cardVariants = {
 
 export default function HomePage() {
   return (
-    <div className="min-h-screen bg-[#F3F4F6] text-[#111827] font-sans selection:bg-[#a3e635] selection:text-[#111827]">
+    // UPDATED BACKGROUND HERE:
+    // Added radial-gradient dot pattern and background-size for that "Tech Grid" look
+    <div className="min-h-screen bg-[#F3F4F6] bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:20px_20px] text-[#111827] font-sans selection:bg-[#a3e635] selection:text-[#111827]">
       {/* Hero Section */}
       <section className="max-w-7xl mx-auto px-4 py-12 sm:px-6 lg:py-20">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
@@ -62,7 +64,7 @@ export default function HomePage() {
 
             <motion.p
               variants={cardVariants}
-              className="text-lg text-gray-500 leading-relaxed max-w-lg"
+              className="text-lg text-gray-500 leading-relaxed max-w-lg bg-[#F3F4F6]/80 backdrop-blur-sm rounded-lg p-2"
             >
               Get personalized meal suggestions based on the ingredients you
               have. Choose your diet preference and get detailed health pros &
@@ -155,7 +157,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* --- Bento Grid Section (UPDATED TO YOUR FEATURES) --- */}
+      {/* --- Bento Grid Section (Your Specific Features) --- */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 pb-24">
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {/* FEATURE 1: Ingredient Search */}
